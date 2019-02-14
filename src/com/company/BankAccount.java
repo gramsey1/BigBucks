@@ -25,6 +25,30 @@ public int compareto(Object otherObject){
         }
         return retValue;
 }
+    
+    /* SORT ALPHABETICALLY
+    public int compareTo(Object otherObject)
+    {
+        BankAccount otherAccount = (BankAccount) otherObject;
+        int retValue;
+        if (name < otherAccount.name)
+        {
+            retValue = -1;
+        }
+        else
+        {
+            if (name > otherAccount.name)
+            {
+                retValue = 1;
+            }
+            else
+            {
+                retValue = 0;
+            }
+        }
+        return retValue;
+    }
+    * */
     public void deposit(double dp) {
         balance = balance + dp;
     }
