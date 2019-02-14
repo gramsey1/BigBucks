@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.*;
-
+import java.text.*;
 public class Main {
 
     public static void main(String[] args) {
@@ -10,33 +10,26 @@ public class Main {
         formatter.setMinimumFractionDigits(2);
         formatter.setMaximumFractionDigits(2);
         String name;
-
-        //Instantiate an ArrayList object here called aryList
-        do
-        {
+        int j;
+        BankAccount ba [] = new BankAccount[5];
+        for(j=0; j < ba.length; j++){
             Scanner kbReader = new Scanner(System.in);
-            System.out.print("Please enter the name to whom the account belongs. ") ;
-            name = kbReader.nextLine( );
+            System.out.println("Please enter the name to whom the account belongs. ");
+            name = kbReader.nextLine();
 
-            if( !name.equalsIgnoreCase("EXIT") ) {
-                System.out.print("Please enter the amount of the deposit. ");
-                double amount = kbReader.nextDouble();
-                System.out.println(" "); //gives an eye-pleasing blank line
-                // Create a BankAccount object
+            System.out.println("Please enter the amount of the deposit. ");
+            double amount = kbReader.nextDouble();
+            System.out.println(" ");//gives a blank line between accounts
 
-                // Add it to the ArrayList object
-                }
-        } while(!name.equalsIgnoreCase("EXIT"));
+            ba[j]= new BankAccount(name, amount);
+        }
+        Comparator comp = new BA_comparable();
 
-        //Search aryList and print out the name and amount of the largest bank account
-        BankAccount ba = //get first account in the list
-        double maxBalance = ba.balance;
-        String maxName = ba.name;
-            for(int j = 1; j < aryLst.size( ); j++) {
-                //Step through the remaining objects and decide which one has
-                //largest balance (compare each balance to maxBalance)
-            }
-            //Print answer
+        Arrays.sort(ba,comp);
+        for(j = 0; j <ba.length; j++){
+            System.out.print(ba[j].name+" >>> " + ba[j].balance+ "\n");
+        }
+
         }
     }
 

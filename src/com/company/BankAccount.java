@@ -9,7 +9,22 @@ public class BankAccount {
         name = nm;
         balance = amt;
     }
-
+public int compareto(Object otherObject){
+        BankAccount otherAccount = (BankAccount) otherObject;
+        int retValue;
+        if(balance < otherAccount.balance){
+            retValue = -1;
+        }
+        else{
+            if (balance > otherAccount.balance){
+                retValue = 1;
+            }
+            else{
+                retValue = 0;
+            }
+        }
+        return retValue;
+}
     public void deposit(double dp) {
         balance = balance + dp;
     }
